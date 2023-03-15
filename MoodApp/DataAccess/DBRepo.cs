@@ -2,6 +2,7 @@
 using System.Text.Json;
 using System.Data.SqlClient;
 using Models;
+using Microsoft.Data.SqlClient;
 
 namespace DataAccess;
 
@@ -21,7 +22,7 @@ public class DBRepo : IRepo
         using SqlCommand command = new("SELECT * FROM USERS", connection);
         using SqlDataReader reader = command.ExecuteReader();
 
-        while(reader.Read())
+        while (reader.Read())
         {
             allUsers.Add(new Users(
             (int)reader["User_Id"],
@@ -38,20 +39,27 @@ public class DBRepo : IRepo
     /// <summary>
     /// Data persistence for creating a new user
     /// </summary>
-    public void CreateNewUser(Users newUser)
+    public bool CreateNewUser(Users newUser)
     {
-        using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
-        connection.Open();
+        try
+        {
+            using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+            connection.Open();
 
-        using SqlCommand command = new SqlCommand("INSERT IMTO USERS(User_Id, F_Name, L_Name, Phone_Number, Zipcode, Birthdate) VALUES(@User_Id, @F_Name, @L_Name, @Phone_Number, @Zipcode, @Birthdate)", connection);
-        command.Parameters.AddWithValue(@"User_Id",newUser.User_Id);
-        command.Parameters.AddWithValue("@F_Name",newUser.F_Name);
-        command.Parameters.AddWithValue("@L_Name",newUser.L_Name);
-        command.Parameters.AddWithValue("@Phone_Number",newUser.Phone_Number);
-        command.Parameters.AddWithValue("@Zipcode",newUser.Zipcode);
-        command.Parameters.AddWithValue("@Birthdate",newUser.Birthdate);
+            using SqlCommand command = new SqlCommand("INSERT IMTO USERS(User_Id, F_Name, L_Name, Phone_Number, Zipcode, Birthdate) VALUES(@User_Id, @F_Name, @L_Name, @Phone_Number, @Zipcode, @Birthdate)", connection);
+            command.Parameters.AddWithValue(@"User_Id", newUser.User_Id);
+            command.Parameters.AddWithValue("@F_Name", newUser.F_Name);
+            command.Parameters.AddWithValue("@L_Name", newUser.L_Name);
+            command.Parameters.AddWithValue("@Phone_Number", newUser.Phone_Number);
+            command.Parameters.AddWithValue("@Zipcode", newUser.Zipcode);
+            command.Parameters.AddWithValue("@Birthdate", newUser.Birthdate);
 
-        command.ExecuteNonQuery();
+            command.ExecuteNonQuery();
+        }
+        catch (SqlException e)
+        {
+            throw e;
+        }
     }
 
     public Users? GetUserByUsername(string Username)
@@ -74,7 +82,7 @@ public class DBRepo : IRepo
         command.Parameters.AddWithValue();
         using SqlDataReader reader = command.ExecuteReader();
 
-        while(reader.Read())
+        while (reader.Read())
         {
             Users? users = new Users(
 
@@ -82,7 +90,7 @@ public class DBRepo : IRepo
             return users;
         }
         return null;
-        
+
 
     }
 }

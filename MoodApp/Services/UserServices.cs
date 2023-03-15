@@ -11,6 +11,11 @@ public class UserServices
         _repo = repo;
     }
 
+    public Users? CreateNewUser(Users user)
+    {
+        return _repo.CreateNewUser(user);
+    }
+
     public Users? GetUserByUsername(string Username)
     {
         return _repo.GetUserByUsername(Username);
@@ -24,10 +29,10 @@ public class UserServices
     public bool Login(string Username, string Pwd)
     {
         Users? users = GetUserByUsername(Username);
-        if(users == null)
+        if (users == null)
         {
             return false;
         }
-        
+        return true;
     }
 }
