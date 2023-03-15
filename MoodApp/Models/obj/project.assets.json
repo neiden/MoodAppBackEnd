@@ -8,26 +8,24 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Melanie\\.nuget\\packages\\": {}
+    "/Users/divyarajsinhrana/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\MoodApp\\Models\\Models.csproj",
+      "projectUniqueName": "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Models/Models.csproj",
       "projectName": "Models",
-      "projectPath": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\MoodApp\\Models\\Models.csproj",
-      "packagesPath": "C:\\Users\\Melanie\\.nuget\\packages\\",
-      "outputPath": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\MoodApp\\Models\\obj\\",
+      "projectPath": "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Models/Models.csproj",
+      "packagesPath": "/Users/divyarajsinhrana/.nuget/packages/",
+      "outputPath": "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Models/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Melanie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/divyarajsinhrana/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -61,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }
