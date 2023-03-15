@@ -252,30 +252,6 @@
             "rid": "win"
           }
         }
-      },
-      "DataAccess/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Models": "1.0.0",
-          "System.Data.SqlClient": "4.8.5"
-        },
-        "compile": {
-          "bin/placeholder/DataAccess.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAccess.dll": {}
-        }
-      },
-      "Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Models.dll": {}
-        }
       }
     }
   },
@@ -933,41 +909,29 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "DataAccess/1.0.0": {
-      "type": "project",
-      "path": "../DataAccess/DataAccess.csproj",
-      "msbuildProject": "../DataAccess/DataAccess.csproj"
-    },
-    "Models/1.0.0": {
-      "type": "project",
-      "path": "../Models/Models.csproj",
-      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "DataAccess >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.2",
-      "Models >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
   "packageFolders": {
-    "/Users/divyarajsinhrana/.nuget/packages/": {}
+    "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Controllers/MoodApp.csproj",
+      "projectUniqueName": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodApp\\MoodApi\\Controllers\\MoodApp.csproj",
       "projectName": "MoodApp",
-      "projectPath": "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Controllers/MoodApp.csproj",
-      "packagesPath": "/Users/divyarajsinhrana/.nuget/packages/",
-      "outputPath": "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Controllers/obj/",
+      "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodApp\\MoodApi\\Controllers\\MoodApp.csproj",
+      "packagesPath": "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodApp\\MoodApi\\Controllers\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/divyarajsinhrana/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Pinkgodzilla\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -978,14 +942,7 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/DataAccess/DataAccess.csproj": {
-              "projectPath": "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/DataAccess/DataAccess.csproj"
-            },
-            "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Models/Models.csproj": {
-              "projectPath": "/Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Models/Models.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -1030,7 +987,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

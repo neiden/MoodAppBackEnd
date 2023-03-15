@@ -41,3 +41,13 @@
 /Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Controllers/obj/Debug/net7.0/MoodApp.pdb
 /Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Controllers/obj/Debug/net7.0/MoodApp.genruntimeconfig.cache
 /Users/divyarajsinhrana/Desktop/MoodAppBackEnd/MoodApp/Controllers/obj/Debug/net7.0/ref/MoodApp.dll
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.csproj.AssemblyReference.cache
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.AssemblyInfoInputs.cache
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.AssemblyInfo.cs
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.csproj.CoreCompileInputs.cache
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.dll
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\refint\MoodApp.dll
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodApp\MoodApi\Controllers\obj\Debug\net7.0\MoodApp.pdb
