@@ -35,7 +35,6 @@ CREATE TABLE MOODS(
     Comment_Date DATETIME DEFAULT GETDATE(),
     Category VARCHAR(50) NOT NULL, 
     Score DECIMAL NOT NULL, 
-
 );
 
 CREATE TABLE PLAYLISTS(
@@ -60,3 +59,5 @@ CREATE TABLE COMMENTS(
     Content VARCHAR(150) NOT NULL, 
     Comment_Date DATETIME DEFAULT GETDATE()
 );
+
+-- INSERT INTO USERS(User_Id, F_Name, L_Name, Phone_Number, Zipcode, Birthdate) VALUES();
