@@ -1,7 +1,7 @@
 using Models;
 using System.Collections.Generic;
 
-namespace DataAcess;
+namespace DataAccess;
 
 public interface IRepo
 {
@@ -9,5 +9,5 @@ public interface IRepo
     Login? GetUserByUsername(string Username);
     Login? GetUserByUserID(int U_Id);
     public bool CreateNewUser(Users newUser);
-    
+
 }
