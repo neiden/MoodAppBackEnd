@@ -1,8 +1,5 @@
-﻿using System;
-using System.Text.Json;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using Models;
-// using Microsoft.Data.SqlClient;
 using DataAcess;
 
 namespace DataAccess;
@@ -64,7 +61,7 @@ public class DBRepo : IRepo
             throw e;
         }
     }
-
+    
     public Login? GetUserByUsername(string Username)
     {
         using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
