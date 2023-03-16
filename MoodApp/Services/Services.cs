@@ -1,56 +1,29 @@
-﻿using System;
-using System.Text;
-using System.Security.Cryptography;
+using Models;
+// using DataAccess;
+using DataAcess;
 
 namespace Services;
 
-public class Services
+public class UserServices
 {
-    private const int SaltSize = 16;
-    private const int HashSize = 20;
-    private const int Iterations = 10000;
-
-    public bool passwordVerification(string enteredPassword, string storedPasswordHash, string storedPasswordSalt)
+    private readonly IRepo _repo;
+    public UserServices(IRepo repo)
     {
-        byte[] salt = Convert.FromBase64String(storedPasswordSalt);
-        byte[] hash = Convert.FromBase64String(storedPasswordHash);
-        byte[] enteredPasswordHash = GeneratePasswordHash(enteredPassword, salt);
-        return SlowEquals(hash, enteredPasswordHash);
+        _repo = repo;
     }
 
-    public string GeneratePasswordHash(string password)
+    public bool? CreateNewUser(Users users)
     {
-        byte[] salt = GenerateSalt();
-        byte[] hash = GeneratePasswordHash(password, salt);
-
-        return $"{Convert.ToBase64String(hash)}:{Convert.ToBase64String(salt)}";
+        return _repo.CreateNewUser(users);
     }
 
-    private byte[] GeneratePasswordHash(string password, byte[] salt)
-    {            
-        using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, Iterations, HashAlgorithmName.SHA256))
-        {
-            return pbkdf2.GetBytes(HashSize);
-        }
+    public Login? GetUserByUsername(string Username)
+    {
+        return _repo.GetUserByUsername(Username);
     }
 
-    private byte[] GenerateSalt()        
+    public Login? GetUserByUserID(int U_Id)
     {
-        byte[] salt = new byte[SaltSize];
-        using (var random = new RNGCryptoServiceProvider())
-        {
-           random.GetBytes(salt);
-        }
-        return salt;
-    }
-
-    private bool SlowEquals(byte[] a, byte[] b)
-    {
-        uint diff = (uint)a.Length ^ (uint)b.Length;
-        for (int i = 0; i < a.Length && i < b.Length; i++)
-        {
-            diff |= (uint)(a[i] ^ b[i]);
-        }
-        return diff == 0;
+        return _repo.GetUserByUserID(U_Id);
     }
 }
