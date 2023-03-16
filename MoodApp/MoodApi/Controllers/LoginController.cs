@@ -28,7 +28,7 @@ public class newLoginController : Controller
 //     [HttpPost]
 //     public Users? Login([FromBody] JsonElement userLogin)
 //     {
-//         Users? user = JsonSerializer.Deserialize<Users?>(userLogin.GetRawText());
+//         Users? users = JsonSerializer.Deserialize<Users?>(userLogin.GetRawText());
 //         return DBRepo.GetUserbyUsername(user);
 //     }
 }

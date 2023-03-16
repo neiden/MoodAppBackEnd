@@ -1,5 +1,5 @@
 using Models;
-using DataAccess;
+using DataAcess;
 
 namespace Services;
 
@@ -11,28 +11,20 @@ public class UserServices
         _repo = repo;
     }
 
-    public Users? CreateNewUser(Users user)
-    {
-        return _repo.CreateNewUser(user);
-    }
+    // public Users? CreateNewUser(Users users)
+    // {
+    //     // return _repo.CreateNewUser(users);
+    // }
 
-    public Users? GetUserByUsername(string Username)
+    public Login? GetUserByUsername(string Username)
     {
         return _repo.GetUserByUsername(Username);
     }
 
-    public Users? GetUserByUserID(int U_Id)
+    public Login? GetUserByUserID(int U_Id)
     {
         return _repo.GetUserByUserID(U_Id);
     }
 
-    public bool Login(string Username, string Pwd)
-    {
-        Users? users = GetUserByUsername(Username);
-        if (users == null)
-        {
-            return false;
-        }
-        return true;
-    }
+
 }

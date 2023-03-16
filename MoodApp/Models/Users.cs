@@ -22,10 +22,4 @@ public class Users
         this.Zipcode = Zipcode;
         this.Birthdate = Birthdate;
     }
-
-    // public override string ToString()
-    // {
-    //     string s = string.Format("UserId: {0} \nFName: {1} \nLName: {2} \nPhoneNumber: {3} \nZipcode: {4} \nBirthdate: {5}", User_Id, F_Name, L_Name, Phone_Number, Zipcode, Birthdate);
-    //     return s;
-    // } 
 }
