@@ -5,7 +5,7 @@ namespace DataAccess;
 
 public interface IRepo
 {
-    List<Users> GetAllUsers();
+    // List<Users> GetAllUsers();
     Login? GetUserByUsername(string Username);
     Login? GetUserByUserID(int U_Id);
     public bool CreateNewUser(Users newUser);
