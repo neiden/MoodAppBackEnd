@@ -1,6 +1,5 @@
 ﻿using System.Data.SqlClient;
 using Models;
-using DataAcess;
 
 namespace DataAccess;
 
@@ -61,17 +60,17 @@ public class DBRepo : IRepo
             throw e;
         }
     }
-    
+
     public Login? GetUserByUsername(string Username)
     {
         using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
         connection.Open();
 
-        using SqlCommand command = new("SELECT * FROM LOGIN WHERE UPPER(Username) = @Username",connection);
+        using SqlCommand command = new("SELECT * FROM LOGIN WHERE UPPER(Username) = @Username", connection);
         command.Parameters.AddWithValue("@Username", Username.ToUpper());
-        
+
         using SqlDataReader reader = command.ExecuteReader();
-        while(reader.Read())
+        while (reader.Read())
         {
             Login login = new Login(
                 (string)reader["Username"],
@@ -80,7 +79,7 @@ public class DBRepo : IRepo
                 (int)reader["U_Id"],
                 (string)reader["Email"]
             );
-        return login;
+            return login;
         }
         return null;
     }
@@ -90,11 +89,11 @@ public class DBRepo : IRepo
         using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
         connection.Open();
 
-        using SqlCommand command = new ("SELECT * FROM LOGIN WHERE U_Id = @U_Id",connection);
+        using SqlCommand command = new("SELECT * FROM LOGIN WHERE U_Id = @U_Id", connection);
         command.Parameters.AddWithValue("@UserId", U_Id);
-        
+
         using SqlDataReader reader = command.ExecuteReader();
-        while(reader.Read())
+        while (reader.Read())
         {
             Login login = new Login(
                 (string)reader["Username"],

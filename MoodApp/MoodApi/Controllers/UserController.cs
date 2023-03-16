@@ -10,8 +10,8 @@ namespace MoodApi.Controllers;
 public class UserController : ControllerBase
 {
     private readonly ILogger<UserController> _logger;
-    private readonly Service _service;
-    public UserController(ILogger<UserController> logger, Service service)
+    private readonly Services _service;
+    public UserController(ILogger<UserController> logger, Services service)
     {
         _logger = logger;
         _service = service;
@@ -20,8 +20,8 @@ public class UserController : ControllerBase
     [HttpPost("Register")]
     public ActionResult<Users> Register([FromBody]Users users)
     {
-        if(string.IsNullOrWhiteSpace(user.Username) == false &&
-           string.IsNullOrWhiteSpace(user.Pwd) == false)
+        if(string.IsNullOrWhiteSpace(users.Username) == false &&
+           string.IsNullOrWhiteSpace(users.Pwd) == false)
            {
             // Check to see if the User's provided username gets anything from db and match them together
             // if no match then create user then bad request
@@ -30,8 +30,8 @@ public class UserController : ControllerBase
                 // make sure any entry in coinbank and click power is changed to default new user settings 
     
                 PasswordHasher ph = new PasswordHasher();
-                user.Password = ph.PasswordHash(user.Pwd);
-                return Created("/Register", _service.createUserinDB(user));
+                users.Password = ph.PasswordHash(users.Pwd);
+                return Created("/Register", _service.createUserinDB(users));
             }
             else{
                 return BadRequest("Username is already taken");
