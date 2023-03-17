@@ -1,7 +1,6 @@
 ﻿using System.Data.SqlClient;
 using Models;
 
-namespace DataAccess;
 
 public class DBRepo : IRepo
 {
@@ -9,29 +8,29 @@ public class DBRepo : IRepo
     /// information for all users
     /// </summary>
     /// <returns> List of all users </returns>
-    public List<Users> GetAllUsers()
-    {
-        List<Users> allUsers = new();
+    // public List<Users> GetAllUsers()
+    // {
+    //     List<Users> allUsers = new();
 
-        using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
-        connection.Open();
+    //     using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+    //     connection.Open();
 
-        using SqlCommand command = new("SELECT * FROM USERS", connection);
-        using SqlDataReader reader = command.ExecuteReader();
+    //     using SqlCommand command = new("SELECT * FROM USERS", connection);
+    //     using SqlDataReader reader = command.ExecuteReader();
 
-        while (reader.Read())
-        {
-            allUsers.Add(new Users(
-            (int)reader["User_Id"],
-            (string)reader["F_Name"],
-            (string)reader["L_Name"],
-            (string)reader["Phone_Number"],
-            (string)reader["Zipcode"],
-            (DateOnly)reader["Birthdate"]
-            ));
-        }
-        return allUsers;
-    }
+    //     while (reader.Read())
+    //     {
+    //         allUsers.Add(new Users(
+    //         (int)reader["User_Id"],
+    //         (string)reader["F_Name"],
+    //         (string)reader["L_Name"],
+    //         (string)reader["Phone_Number"],
+    //         (string)reader["Zipcode"],
+    //         (DateOnly)reader["Birthdate"]
+    //         ));
+    //     }
+    //     return allUsers;
+    // }
 
     ///<summary>
     ///Data persistence for creating a new user
