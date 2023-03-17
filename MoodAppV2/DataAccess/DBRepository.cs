@@ -5,6 +5,33 @@ namespace DataAccess;
 
 public class DBRepository : IRepo
 {
+
+
+    public Users Authenticate(string[] loginInfo)
+    {
+        Users user = new Users();
+        using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+        connection.Open();
+
+        using SqlCommand cmd = new SqlCommand("SELECT User_Id, F_Name, L_Name, Phone_Number, Zipcode, Birthdate FROM Logins JOIN Users on Logins.U_Id = Users.User_Id WHERE Logins.Username = @username AND Logins.P_hash_salt = @pass", connection);
+        cmd.Parameters.AddWithValue("@username", loginInfo[0]);
+        cmd.Parameters.AddWithValue("@pass", loginInfo[1]);
+
+        using SqlDataReader reader = cmd.ExecuteReader();
+        reader.Read();
+        if (reader.HasRows)
+        {
+            user.User_Id = (int)reader["User_Id"];
+            user.F_Name = (string)reader["F_Name"];
+            user.L_Name = (string)reader["L_Name"];
+            user.Phone_Number = (string)reader["Phone_Number"];
+            user.Zipcode = (string)reader["Zipcode"];
+            user.Birthdate = (DateTime)reader["Birthdate"];
+        }
+
+        return user;
+    }
+
     /// <summary>
     /// information for all users
     /// </summary>
@@ -27,7 +54,7 @@ public class DBRepository : IRepo
             (string)reader["L_Name"],
             (string)reader["Phone_Number"],
             (string)reader["Zipcode"],
-            (DateOnly)reader["Birthdate"]
+            (DateTime)reader["Birthdate"]
             ));
         }
         return allUsers;
@@ -36,37 +63,39 @@ public class DBRepository : IRepo
     ///<summary>
     ///Data persistence for creating a new user
     ///</summary>
-    public Boolean CreateNewUser(Users newUser)
+    public Boolean CreateNewUser(string[] accInfo)
     {
+        bool success = false;
         try
         {
             using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
             connection.Open();
 
-            using SqlCommand command = new SqlCommand("INSERT INTO USERS(User_Id, F_Name, L_Name, Phone_Number, Zipcode, Birthdate) VALUES(@User_Id, @F_Name, @L_Name, @Phone_Number, @Zipcode, @Birthdate)", connection);
-            command.Parameters.AddWithValue(@"User_Id", newUser.User_Id);
-            command.Parameters.AddWithValue("@F_Name", newUser.F_Name);
-            command.Parameters.AddWithValue("@L_Name", newUser.L_Name);
-            command.Parameters.AddWithValue("@Phone_Number", newUser.Phone_Number);
-            command.Parameters.AddWithValue("@Zipcode", newUser.Zipcode);
-            command.Parameters.AddWithValue("@Birthdate", newUser.Birthdate);
+            using SqlCommand command = new SqlCommand("INSERT INTO USERS(F_Name, L_Name, Phone_Number, Zipcode, Birthdate) VALUES(@F_Name, @L_Name, @Phone_Number, @Zipcode, @Birthdate)", connection);
+            command.Parameters.AddWithValue("@F_Name", accInfo[0]);
+            command.Parameters.AddWithValue("@L_Name", accInfo[1]);
+            command.Parameters.AddWithValue("@Phone_Number", accInfo[2]);
+            command.Parameters.AddWithValue("@Zipcode", accInfo[3]);
+            command.Parameters.AddWithValue("@Birthdate", DateTime.Now);
+
+            int userId = (int)command.ExecuteScalar();
 
             using SqlCommand cmd = new SqlCommand("INSERT INTO LOGIN VALUES(@username, @pHash, @pwd, @uId, @email)");
-            command.Parameters.AddWithValue(@"username", newUser.Username);
-            command.Parameters.AddWithValue("@F_Name", newUser.F_Name);
-            command.Parameters.AddWithValue("@L_Name", newUser.L_Name);
-            command.Parameters.AddWithValue("@Phone_Number", newUser.Phone_Number);
-            command.Parameters.AddWithValue("@Zipcode", newUser.Zipcode);
+            cmd.Parameters.AddWithValue("@username", accInfo[4]);
+            cmd.Parameters.AddWithValue("@uId", userId);
+            cmd.Parameters.AddWithValue("@pHash", "password");
+            cmd.Parameters.AddWithValue("@pwd", accInfo[5]);
+            cmd.Parameters.AddWithValue("@email", accInfo[6]);
 
 
-            int rowsAffected = command.ExecuteNonQuery();
-
-            return rowsAffected > 0;
+            cmd.ExecuteNonQuery();
+            success = true;
         }
         catch (SqlException e)
         {
             throw e;
         }
+        return success;
     }
 
     public Login? GetUserByUsername(string Username)
