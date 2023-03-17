@@ -8,7 +8,17 @@ public interface IRepo
     Users Authenticate(string[] loginInfo);
     List<Users> GetAllUsers();
     Login? GetUserByUsername(string Username);
-    Login? GetUserByUserID(int U_Id);
-    public bool CreateNewUser(string[] accInfo);
+    Account GetUserByUserID(int U_Id);
+
+    List<Post> GetPostsByUserID(int U_Id);
+    public bool CreateNewUser(Account acc);
+
+    public Post CreateNewPost(Post post);
+
+    public List<Comment> GetCommentsByPostID(int P_Id);
+    public Comment CreateNewComment(Comment com);
+
+    public List<Playlist> GetPlaylistsByUserID(int u_Id);
+    public Playlist CreateNewPlaylist(Playlist pl);
 
 }

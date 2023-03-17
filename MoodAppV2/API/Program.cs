@@ -12,7 +12,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRepo, DBRepository>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<PasswordService>();
-
+builder.Services.AddScoped<PostService>();
+builder.Services.AddScoped<CommentService>();
+builder.Services.AddScoped<PlaylistService>();
 
 builder.Services.AddControllersWithViews();
 

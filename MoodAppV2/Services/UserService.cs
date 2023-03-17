@@ -25,9 +25,9 @@ public class UserService
         return _repo.Authenticate(loginInfo);
     }
 
-    public bool RegisterUser(string[] accInfo)
+    public bool RegisterUser(Account acc)
     {
-        return _repo.CreateNewUser(accInfo);
+        return _repo.CreateNewUser(acc);
     }
 
     public Login? GetUserByUsername(string Username)
@@ -35,7 +35,7 @@ public class UserService
         return _repo.GetUserByUsername(Username);
     }
 
-    public Login? GetUserByUserID(int U_Id)
+    public Account GetUserByUserID(int U_Id)
     {
         return _repo.GetUserByUserID(U_Id);
     }
