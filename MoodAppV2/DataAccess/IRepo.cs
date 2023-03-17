@@ -20,5 +20,7 @@ public interface IRepo
 
     public List<Playlist> GetPlaylistsByUserID(int u_Id);
     public Playlist CreateNewPlaylist(Playlist pl);
+    public Mood CreateNewMood(Mood mood);
+    public List<Mood> GetMoodsByUserID(int u_Id);
 
 }

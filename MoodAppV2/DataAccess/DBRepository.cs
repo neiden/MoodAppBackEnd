@@ -327,5 +327,58 @@ public class DBRepository : IRepo
         {
             throw e;
         }
+
     }
+    public Mood CreateNewMood(Mood mood)
+    {
+        try
+        {
+            using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+            connection.Open();
+            using SqlCommand command = new("INSERT INTO Moods VALUES (@uId, @date, @category,@score)", connection);
+            command.Parameters.AddWithValue("@uId", mood.UserId);
+            command.Parameters.AddWithValue("@category", mood.Category);
+            command.Parameters.AddWithValue("@date", mood.Date);
+            command.Parameters.AddWithValue("@score", mood.Score);
+
+            command.ExecuteNonQuery();
+
+            return mood;
+        }
+        catch (SqlException e)
+        {
+            throw e;
+        }
+    }
+
+    public List<Mood> GetMoodsByUserID(int u_Id)
+    {
+        try
+        {
+            List<Mood> moods = new List<Mood>();
+            using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+            connection.Open();
+            using SqlCommand command = new("SELECT Id, U_Id, Comment_Date, Category, Score FROM Moods JOIN Users ON Moods.U_Id = Users.User_Id WHERE Users.User_Id = @uId", connection);
+            command.Parameters.AddWithValue("@uId", u_Id);
+            using SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                moods.Add(new Mood()
+                {
+                    MoodId = (int)reader["Id"],
+                    UserId = (int)reader["U_Id"],
+                    Date = (DateTime)reader["Comment_Date"],
+                    Score = (decimal)reader["Score"],
+                    Category = (string)reader["Category"]
+                });
+            }
+
+            return moods;
+        }
+        catch (SqlException e)
+        {
+            throw e;
+        }
+    }
+
 }

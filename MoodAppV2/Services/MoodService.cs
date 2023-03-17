@@ -11,15 +11,14 @@ public class MoodService
         _repo = repo;
     }
 
-    public List<Mood> GetCommentsByPostId(int P_Id)
+    public List<Mood> GetMoodsByUserID(int u_Id)
     {
-        //return _repo.GetCommentsByPostID(P_Id);
-        return null;
+        return _repo.GetMoodsByUserID(u_Id);
     }
 
-    public Comment CreateComment(Comment com)
+    public Mood CreateMood(Mood mood)
     {
-        return _repo.CreateNewComment(com);
+        return _repo.CreateNewMood(mood);
     }
 
 
