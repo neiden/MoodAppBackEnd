@@ -16,6 +16,7 @@ builder.Services.AddScoped<PostService>();
 builder.Services.AddScoped<CommentService>();
 builder.Services.AddScoped<PlaylistService>();
 builder.Services.AddScoped<MoodService>();
+builder.Services.AddScoped<FriendService>();
 
 builder.Services.AddControllersWithViews();
 
