@@ -133,7 +133,7 @@ public class DBRepository : IRepo
         return null;
     }
 
-    public Account GetUserByUserID(int U_Id)
+    public Account GetAccountByUserID(int U_Id)
     {
 
         try
@@ -168,6 +168,39 @@ public class DBRepository : IRepo
         {
             throw e;
         }
+    }
+
+    public Users GetUserByUserID(int u_Id)
+    {
+        try
+        {
+            using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+            connection.Open();
+
+            using SqlCommand command = new("SELECT * FROM Users WHERE Users.User_Id = @UserId", connection);
+            command.Parameters.AddWithValue("@UserId", u_Id);
+
+            using SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Users user = new Users()
+                {
+                    User_Id = (int)reader["User_Id"],
+                    F_Name = (string)reader["F_Name"],
+                    L_Name = (string)reader["L_Name"],
+                    Phone_Number = (string)reader["Phone_Number"],
+                    Zipcode = (string)reader["Zipcode"],
+                    Birthdate = (DateTime)reader["Birthdate"]
+                };
+                return user;
+            }
+            return null;
+        }
+        catch (SqlException e)
+        {
+            throw e;
+        }
+
     }
 
 
@@ -380,5 +413,56 @@ public class DBRepository : IRepo
             throw e;
         }
     }
+
+    public Friend CreateNewFriend(Friend friend)
+    {
+        try
+        {
+            using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+            connection.Open();
+            using SqlCommand command = new("INSERT INTO Friends VALUES (@sId, @tId)", connection);
+            command.Parameters.AddWithValue("@tId", friend.TargetId);
+            command.Parameters.AddWithValue("@sId", friend.SourceId);
+
+            command.ExecuteNonQuery();
+
+            return friend;
+        }
+        catch (SqlException e)
+        {
+            throw e;
+        }
+    }
+
+    public List<Users> GetFriendsByUserID(int U_Id)
+    {
+        try
+        {
+            List<int> friendIds = new List<int>();
+            List<Users> friendsList = new List<Users>();
+            using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+            connection.Open();
+            using SqlCommand command = new("SELECT Target_Id FROM Friends WHERE Source_Id = @uId", connection);
+            command.Parameters.AddWithValue("@uId", U_Id);
+            using SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                friendIds.Add((int)reader["Target_Id"]);
+            }
+
+            foreach (var id in friendIds)
+            {
+                friendsList.Add(GetUserByUserID(id));
+            }
+
+            return friendsList;
+        }
+        catch (SqlException e)
+        {
+            throw e;
+        }
+    }
+
+
 
 }

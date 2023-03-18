@@ -21,11 +21,11 @@ public class UserController : ControllerBase
 
     }
 
-    [HttpGet("GetUser")]
+    [HttpGet("GetAccount")]
 
-    public ActionResult<Users> GetUser([FromQuery] int User_Id)
+    public ActionResult<Users> GetAccount([FromQuery] int User_Id)
     {
-        return Created("/Users", _service.GetUserByUserID(User_Id));
+        return Created("/Users", _service.GetAccountByUserID(User_Id));
     }
 
 

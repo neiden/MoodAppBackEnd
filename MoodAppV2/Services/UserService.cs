@@ -35,9 +35,9 @@ public class UserService
         return _repo.GetUserByUsername(Username);
     }
 
-    public Account GetUserByUserID(int U_Id)
+    public Account GetAccountByUserID(int U_Id)
     {
-        return _repo.GetUserByUserID(U_Id);
+        return _repo.GetAccountByUserID(U_Id);
     }
 
 
