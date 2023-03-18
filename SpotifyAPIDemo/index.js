@@ -26,11 +26,22 @@ spotifyApi.setAccessToken("BQCCFz-_elP6EQzsuFF4G3qzlEZPZTRUYBb-mHET3p7T1u5EdwVVI
 //     console.error(e);
 //   });
 
+async function getTracksByGenre(genre){
+  const me = await spotifyApi.searchTracks('genre:rap', {limit : 10, offset: 2});
+  console.log(me.body.tracks);
+  return me.body.tracks;
+}
+
  
-  (async () => {
-    const me = await spotifyApi.createPlaylist('Test playlist', { 'description': 'My description', 'public': true });
-    console.log(me.body.tracks);
-  })().catch(e => {
-    console.error(e);
-  });
+async function createPlaylist(){
+  const me = await spotifyApi.createPlaylist('Test playlist', { 'description': 'My description', 'public': true });
+  console.log(me.body.tracks);
+}
+
+  // (async () => {
+  //   const me = await spotifyApi.createPlaylist('Test playlist', { 'description': 'My description', 'public': true });
+  //   console.log(me.body.tracks);
+  // })().catch(e => {
+  //   console.error(e);
+  // });
   
