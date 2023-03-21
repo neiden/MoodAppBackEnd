@@ -8,7 +8,7 @@ namespace NaturalLanguageApiDemo
     {
         static void Main(string[] args)
         {
-            var text = "It's going alright, not too bad not too good.";
+            var text = "It's going amazing!!! I love life hahahaha.";
             var client = LanguageServiceClient.Create();
             var response = client.AnalyzeSentiment(Document.FromPlainText(text));
             var sentiment = response.DocumentSentiment;
