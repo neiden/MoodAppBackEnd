@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "c:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodApp\\MoodApi\\Controllers\\obj\\Debug\\net7.0\\project.razor.json",
-  "FilePath": "c:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodApp\\MoodApi\\Controllers\\MoodApp.csproj",
+  "SerializedFilePath": "c:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodAppV2\\API\\obj\\Debug\\net7.0\\project.razor.json",
+  "FilePath": "c:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodAppV2\\API\\API.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "7.0",
@@ -18642,7 +18642,7 @@
     ],
     "CSharpLanguageVersion": 1100
   },
-  "RootNamespace": "MoodApp",
+  "RootNamespace": "API",
   "Documents": [],
   "SerializationFormat": "0.3"
 }

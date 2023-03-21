@@ -664,19 +664,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Melanie\\.nuget\\packages\\": {}
+    "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\GoogleAPIDemo\\GoogleAPIDemo.csproj",
+      "projectUniqueName": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\GoogleAPIDemo\\GoogleAPIDemo.csproj",
       "projectName": "GoogleAPIDemo",
-      "projectPath": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\GoogleAPIDemo\\GoogleAPIDemo.csproj",
-      "packagesPath": "C:\\Users\\Melanie\\.nuget\\packages\\",
-      "outputPath": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\GoogleAPIDemo\\obj\\",
+      "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\GoogleAPIDemo\\GoogleAPIDemo.csproj",
+      "packagesPath": "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\GoogleAPIDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Melanie\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Pinkgodzilla\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
