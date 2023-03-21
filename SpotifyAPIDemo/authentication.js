@@ -3,7 +3,7 @@ function Authenticate(){
     var SpotifyWebApi = require('spotify-web-api-node');
     
     var scopes = ['user-read-private', 'user-read-email','playlist-modify-public'],
-      redirectUri = 'https://example.com/callback',
+      redirectUri = 'http://localhost:4200/home',
       clientId = '0c8985046bc0483ebc4b6192fffa648d',
       clientSecret = 'bc3019aa224d49dcad001b9fd074d886',
       state = 'some-state-of-my-choice';
