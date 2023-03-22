@@ -17,6 +17,7 @@ builder.Services.AddScoped<CommentService>();
 builder.Services.AddScoped<PlaylistService>();
 builder.Services.AddScoped<MoodService>();
 builder.Services.AddScoped<FriendService>();
+builder.Services.AddScoped<GoogleService>();
 
 builder.Services.AddControllersWithViews();
 
@@ -29,7 +30,7 @@ app.UseSwaggerUI();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    
+
 }
 
 app.UseHttpsRedirection();
