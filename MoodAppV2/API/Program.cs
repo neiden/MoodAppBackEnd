@@ -17,6 +17,8 @@ builder.Services.AddScoped<CommentService>();
 builder.Services.AddScoped<PlaylistService>();
 builder.Services.AddScoped<MoodService>();
 builder.Services.AddScoped<FriendService>();
+builder.Services.AddScoped<GoogleService>();
+
 
 builder.Services.AddControllersWithViews();
 
