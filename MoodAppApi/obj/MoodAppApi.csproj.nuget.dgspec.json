@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj": {}
+    "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj": {}
   },
   "projects": {
-    "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj": {
+    "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj",
+        "projectUniqueName": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj",
         "projectName": "MoodAppApi",
-        "projectPath": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj",
-        "packagesPath": "C:\\Users\\Melanie\\.nuget\\packages\\",
-        "outputPath": "D:\\Melanie\\NetProjects\\MoodAppBackEnd\\MoodAppApi\\obj\\",
+        "projectPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj",
+        "packagesPath": "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodAppApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Melanie\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Pinkgodzilla\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -38,6 +38,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Google.Apis": {
+              "target": "Package",
+              "version": "[1.60.0, )"
+            },
+            "Google.Cloud.Language.V1": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.2, )"
