@@ -17,13 +17,13 @@ public class MoodController : ControllerBase
     }
 
     [HttpPost("Moods")]
-    public ActionResult<Comment> CreateMood([FromBody] Mood mood)
+    public ActionResult<Mood> CreateMood([FromBody] Mood mood)
     {
         return Created("/Moods", _service.CreateMood(mood));
     }
 
     [HttpGet("Moods")]
-    public ActionResult<Comment> GetComments([FromQuery] int uId)
+    public ActionResult<Mood> GetComments([FromQuery] int uId)
     {
         return Created("/Moods", _service.GetMoodsByUserID(uId));
     }

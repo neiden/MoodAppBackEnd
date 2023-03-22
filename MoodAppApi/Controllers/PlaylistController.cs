@@ -17,13 +17,13 @@ public class PlaylistController : ControllerBase
     }
 
     [HttpPost("Playlists")]
-    public ActionResult<Comment> CreatePlaylist([FromBody] Playlist pl)
+    public ActionResult<Playlist> CreatePlaylist([FromBody] Playlist pl)
     {
         return Created("/Create", _service.CreatePlaylist(pl));
     }
 
     [HttpGet("Playlists")]
-    public ActionResult<Comment> GetPlaylist([FromQuery] int uId)
+    public ActionResult<Playlist> GetPlaylist([FromQuery] int uId)
     {
         return Created("/GetPlaylist", _service.GetPlaylistsByUserID(uId));
     }
