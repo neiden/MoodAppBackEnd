@@ -15,3 +15,5 @@ C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppV2\Servic
 C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppV2\Services\obj\Debug\net7.0\refint\Services.dll
 C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppV2\Services\obj\Debug\net7.0\Services.pdb
 C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppV2\Services\obj\Debug\net7.0\ref\Services.dll
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppV2\Services\bin\Debug\net7.0\GoogleAPIDemo.dll
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppV2\Services\bin\Debug\net7.0\GoogleAPIDemo.pdb

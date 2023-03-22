@@ -234,7 +234,7 @@ public class DBRepository : IRepo
             using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
             connection.Open();
 
-            using SqlCommand command = new("SELECT Post_Id, U_Id, Likes, Content, Comment_Date FROM Posts JOIN Users ON Posts.U_Id = Users.User_Id WHERE Users.User_Id = @uId", connection);
+            using SqlCommand command = new("SELECT Post_Id, U_Id, Likes, Content, Comment_Date FROM Posts JOIN Users ON Posts.U_Id = Users.User_Id WHERE Users.User_Id = @uId ORDER BY Posts.Comment_Date DESC", connection);
             command.Parameters.AddWithValue("@uId", U_Id);
             using SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -289,7 +289,7 @@ public class DBRepository : IRepo
             List<Comment> comList = new List<Comment>();
             using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
             connection.Open();
-            using SqlCommand command = new("SELECT Comment_Id, P_Id, Comments.Likes AS Likes, Comments.Content AS Content, Comments.Comment_Date AS Date FROM Comments JOIN Posts ON Comments.P_Id = Posts.Post_Id WHERE Posts.Post_Id = @pId", connection);
+            using SqlCommand command = new("SELECT Comment_Id, P_Id, Comments.Likes AS Likes, Comments.Content AS Content, Comments.Comment_Date AS Date FROM Comments JOIN Posts ON Comments.P_Id = Posts.Post_Id WHERE Posts.Post_Id = @pId ORDER BY Comments.Comment_Date DESC", connection);
             command.Parameters.AddWithValue("@pId", P_Id);
             using SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
