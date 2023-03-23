@@ -6,7 +6,42 @@ namespace DataAccess;
 public class DBRepository : IRepo
 {
 
+    public bool UpdateUser(Account updated_acc)
+    {
+        try
+        {
+            //int user_ID = updated_acc.User_Id;
+            using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
+            connection.Open();
+            
+            string uquery = "UPDATE USERS SET F_Name = @F_Name, L_Name = @L_Name, Phone_Number = @Phone_Number, Zipcode = @Zipcode, Birthdate = @Birthdate WHERE User_Id = @U_Id";
+            using SqlCommand command = new SqlCommand(uquery, connection);
+            command.Parameters.AddWithValue("@F_Name", updated_acc.Firstname);
+            command.Parameters.AddWithValue("@L_Name", updated_acc.Lastname);
+            command.Parameters.AddWithValue("@Phone_Number", updated_acc.PhoneNumber);
+            command.Parameters.AddWithValue("@Zipcode", updated_acc.Zipcode);
+            command.Parameters.AddWithValue("@Birthdate", updated_acc.Birthdate);
+            command.Parameters.AddWithValue("@U_Id", updated_acc.User_Id);
 
+            command.ExecuteNonQuery();
+
+            string lquery = "UPDATE LOGINS SET Username = @username, Pwd = @pwd, Email = @email WHERE U_Id = @uId";
+            using SqlCommand cmd = new SqlCommand(lquery, connection);
+            cmd.Parameters.AddWithValue("@username", updated_acc.Username);
+            cmd.Parameters.AddWithValue("@uId", updated_acc.User_Id);
+            cmd.Parameters.AddWithValue("@pwd", updated_acc.Password);
+            cmd.Parameters.AddWithValue("@email", updated_acc.Email);
+
+            cmd.ExecuteNonQuery();
+
+            return true;
+        }
+        catch (SqlException e)
+        {
+            return false;
+            throw e;
+        }
+    }
     public Users Authenticate(string[] loginInfo)
     {
         Users user = new Users();
@@ -110,6 +145,7 @@ public class DBRepository : IRepo
         return success;
     }
 
+    ///might delete this later?
     public Login? GetUserByUsername(string Username)
     {
         using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
@@ -202,7 +238,6 @@ public class DBRepository : IRepo
         }
 
     }
-
 
     public Post CreateNewPost(Post post)
     {
@@ -463,6 +498,5 @@ public class DBRepository : IRepo
         }
     }
 
-
-
+    
 }

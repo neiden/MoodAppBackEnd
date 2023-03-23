@@ -12,11 +12,6 @@ public class UserService
         _repo = repo;
     }
 
-    // public Users? CreateNewUser(Users users)
-    // {
-    //     // return _repo.CreateNewUser(users);
-    // }
-
     public Users Authenticate(string[] loginInfo)
     {
         // Hash the password here 
@@ -42,6 +37,25 @@ public class UserService
     public Account GetAccountByUserID(int U_Id)
     {
         return _repo.GetAccountByUserID(U_Id);
+    }
+
+    public Users GetUserByUserID(int U_Id){
+        return _repo.GetUserByUserID(U_Id);
+    }
+
+    public List<Users> GetAllUsers(){
+        return _repo.GetAllUsers();
+    }
+
+    public Account UpdateAccount(Account updatedAccount){
+        Account? newAcc = new();
+        int id = updatedAccount.User_Id;
+        if(_repo.UpdateUser(updatedAccount)){
+            return _repo.GetAccountByUserID(id);
+            
+        }
+
+        return newAcc;
     }
 
 

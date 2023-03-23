@@ -10,6 +10,7 @@ public interface IRepo
     Login? GetUserByUsername(string Username);
     Users GetUserByUserID(int U_Id);
     Account GetAccountByUserID(int U_Id);
+    bool UpdateUser(Account updated_acc);
 
     List<Post> GetPostsByUserID(int U_Id);
     public bool CreateNewUser(Account acc);

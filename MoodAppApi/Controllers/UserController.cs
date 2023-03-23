@@ -47,6 +47,16 @@ public class UserController : ControllerBase
         return Created("/Login", _service.Authenticate(info));
     }
 
+    [HttpGet("AllUsers")]
+    public ActionResult<Users> GetUsers(){
+        return Created("/userlist", _service.GetAllUsers());
+    }
+
+    [HttpPut("Users")]
+    public ActionResult<Account> UpdateAccount(Account acc){
+        return Created("/user", _service.UpdateAccount(acc));
+    }
+
 }
 
 
