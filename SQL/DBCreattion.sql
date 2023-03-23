@@ -70,4 +70,7 @@ SELECT * FROM MOODS;
 Delete from Logins where Username = 'VelmaJinkies1';
 Delete from Users where User_Id = 11;
 
+UPDATE USERS SET F_Name = 'Shaggy', L_Name = 'Rogers', Phone_Number = '209654874', Zipcode = '92657', Birthdate = '1969-10-31' WHERE User_Id = 5;
+UPDATE LOGINS SET Username = 'ScoobySnacks31', Pwd = 'newPass1', Email = 'mysterysnack@scooby.com' WHERE U_Id = 5;
 
+--Delete FROM POSTS where Post_Id in (11,14,16,17,18,19,20,21,22,23,24,26,27) 
