@@ -20,7 +20,4 @@ public class CommentService
     {
         return _repo.CreateNewComment(com);
     }
-
-
-
 }

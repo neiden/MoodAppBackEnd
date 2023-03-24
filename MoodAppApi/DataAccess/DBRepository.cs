@@ -6,7 +6,6 @@ namespace DataAccess;
 public class DBRepository : IRepo
 {
 
-
     public Users Authenticate(string[] loginInfo)
     {
         Users user = new Users();
