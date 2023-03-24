@@ -7,5 +7,7 @@ public class Comment
     public int CommentId { get; set; }
     public int PostId { get; set; }
     public int Likes { get; set; }
+
+    public int U_id {get; set;}
     public DateTime CommentDate { get; set; }
 }
