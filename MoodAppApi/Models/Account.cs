@@ -13,6 +13,4 @@ public class Account
     public string? PhoneNumber { get; set; }
     public string? Zipcode { get; set; }
     public DateTime Birthdate { get; set; }
-
-
 }

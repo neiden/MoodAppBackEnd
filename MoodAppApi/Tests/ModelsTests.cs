@@ -1,7 +1,7 @@
 using Models;
 using System;
 
-namespace Models.Tests
+namespace Tests
 {
     public class AccountTests
     {
