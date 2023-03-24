@@ -1,5 +1,6 @@
 using System.Data.SqlClient;
 using Models;
+using Serilog;
 
 namespace DataAccess;
 
@@ -13,7 +14,7 @@ public class DBRepository : IRepo
             //int user_ID = updated_acc.User_Id;
             using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
             connection.Open();
-            
+
             string uquery = "UPDATE USERS SET F_Name = @F_Name, L_Name = @L_Name, Phone_Number = @Phone_Number, Zipcode = @Zipcode, Birthdate = @Birthdate WHERE User_Id = @U_Id";
             using SqlCommand command = new SqlCommand(uquery, connection);
             command.Parameters.AddWithValue("@F_Name", updated_acc.Firstname);
@@ -38,6 +39,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Update user failed: " + e);
             return false;
             throw e;
         }
@@ -106,7 +108,7 @@ public class DBRepository : IRepo
         {
             using SqlConnection connection = new SqlConnection(Secrets.getConnectionString());
             connection.Open();
-            
+
             using SqlCommand command = new SqlCommand("INSERT INTO USERS(F_Name, L_Name, Phone_Number, Zipcode, Birthdate) OUTPUT INSERTED.User_Id VALUES(@F_Name, @L_Name, @Phone_Number, @Zipcode, @Birthdate)", connection);
             command.Parameters.AddWithValue("@F_Name", acc.Firstname);
             command.Parameters.AddWithValue("@L_Name", acc.Lastname);
@@ -124,6 +126,7 @@ public class DBRepository : IRepo
             }
             else
             {
+                Log.Error("User_id wasn't created in create user");
                 return false;
             }
 
@@ -140,6 +143,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error in creating user: " + e);
             throw e;
         }
         return success;
@@ -202,6 +206,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Get Account by id failed: " + e);
             throw e;
         }
     }
@@ -234,6 +239,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error in getting User by user ID: " + e);
             throw e;
         }
 
@@ -257,6 +263,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Failed to create new post: " + e);
             throw e;
         }
     }
@@ -288,6 +295,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Unable to get post by ID: " + e);
             throw e;
         }
     }
@@ -313,6 +321,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Unable to create new comment: " + e);
             throw e;
         }
 
@@ -346,6 +355,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error in getting comments by post ID: " + e);
             throw e;
         }
     }
@@ -375,6 +385,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error getting playlist by ID: " + e);
             throw e;
         }
     }
@@ -396,6 +407,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error creating new playlist : " + e);
             throw e;
         }
 
@@ -418,6 +430,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error creating a new mood: " + e);
             throw e;
         }
     }
@@ -448,6 +461,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error getting moods by userID: " + e);
             throw e;
         }
     }
@@ -468,6 +482,7 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error creating new friend: " + e);
             throw e;
         }
     }
@@ -497,9 +512,10 @@ public class DBRepository : IRepo
         }
         catch (SqlException e)
         {
+            Log.Error("Error getting all friends from userID: " + e);
             throw e;
         }
     }
 
-    
+
 }

@@ -106,3 +106,6 @@ D:\Melanie\NetProjects\MoodAppBackEnd\MoodAppApi\bin\Debug\net7.0\Grpc.Net.Clien
 D:\Melanie\NetProjects\MoodAppBackEnd\MoodAppApi\bin\Debug\net7.0\Grpc.Net.Common.dll
 D:\Melanie\NetProjects\MoodAppBackEnd\MoodAppApi\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Melanie\NetProjects\MoodAppBackEnd\MoodAppApi\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppApi\bin\Debug\net7.0\Serilog.dll
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppApi\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+C:\Users\Pinkgodzilla\Documents\Revature\MoodApp\MoodAppBackEnd\MoodAppApi\bin\Debug\net7.0\Serilog.Sinks.File.dll

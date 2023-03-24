@@ -1,5 +1,10 @@
 using DataAccess;
 using Services;
+using Serilog;
+
+
+
+Log.Logger = new LoggerConfiguration().WriteTo.File("../logs.txt").CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,12 +29,14 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+Log.Information("Starting Mood API");
+
 app.UseSwagger();
 app.UseSwaggerUI();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    
+
 }
 
 app.UseHttpsRedirection();
