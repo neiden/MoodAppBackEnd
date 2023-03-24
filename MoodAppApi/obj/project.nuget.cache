@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wocfY5t6SP8KK/FlOWeZ4it/DUibrgjpWb9+j7V14Nm+rYclgNUlFMB9KVFk+72q2fSHTCF8KkQcgIv6VRjQpg==",
+  "dgSpecHash": "J88tsNiiSdNlveMje0/CcBdW93FeX5EpFXcCJlu+2N4BX5Ea7I7iUCQoWYRScbJqE1iJX6eeev14jJcH1BThjg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pinkgodzilla\\Documents\\Revature\\MoodApp\\MoodAppBackEnd\\MoodAppApi\\MoodAppApi.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,9 @@
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\serilog\\2.12.0\\serilog.2.12.0.nupkg.sha512",
+    "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\serilog.sinks.console\\4.1.0\\serilog.sinks.console.4.1.0.nupkg.sha512",
+    "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Pinkgodzilla\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

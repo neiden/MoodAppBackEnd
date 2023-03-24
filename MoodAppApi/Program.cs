@@ -1,5 +1,11 @@
 using DataAccess;
 using Services;
+using Serilog;
+
+
+
+Log.Logger = new LoggerConfiguration().WriteTo.File("../logs.txt", rollingInterval: RollingInterval.Day).CreateLogger();
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,13 +23,14 @@ builder.Services.AddScoped<CommentService>();
 builder.Services.AddScoped<PlaylistService>();
 builder.Services.AddScoped<MoodService>();
 builder.Services.AddScoped<FriendService>();
-builder.Services.AddScoped<GoogleService>();
 
 builder.Services.AddControllersWithViews();
 
 
 
 var app = builder.Build();
+
+Log.Information("Starting Mood API");
 
 app.UseSwagger();
 app.UseSwaggerUI();
